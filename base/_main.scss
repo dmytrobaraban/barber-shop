@@ -1,0 +1,13 @@
+.main{
+    margin-bottom: 48px;
+}
+.swiper {
+    &-slide{
+        & img {
+        cursor: pointer;
+        width: inherit;
+        opacity: 0.5;
+        }
+    }
+}
+
