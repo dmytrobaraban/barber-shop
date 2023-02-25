@@ -86,7 +86,7 @@
         }
     }
     
-    & input{
+    & input:not(:nth-child(0)){
         display: block;
         border: 1px solid #CECECE;
         border-radius: 10px;
