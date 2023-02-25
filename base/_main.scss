@@ -1,7 +1,9 @@
 .main{
-    margin-bottom: 48px;
+    position: relative;
+    min-height: auto;
+    background-color: #000;
 }
-.swiper {
+.swiper{
     &-slide{
         & img {
         cursor: pointer;
@@ -11,3 +13,145 @@
     }
 }
 
+.sign-up{
+    display: block;
+    position: absolute;
+    text-align: center;
+    max-width: 500px;
+    max-height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, .45);
+    border-radius: 100%;
+    padding: 100px 0;
+    z-index: 2;
+    &-btn{
+        background: #795548;
+        color: #fff;
+        font-size: 1.1rem;
+        border: 1px solid transparent;
+        padding: 13px 21px;
+        height: auto;
+        text-transform: uppercase;
+        min-width: 155px;
+        border-radius: 30px;
+        width: 40%;
+        margin-bottom: 3%;
+        transition: all .3s ease-in;
+        &:hover{
+            color: #000;
+            background: #fff;
+        }
+    }
+    & .logo-shaver{
+        display: block;
+        margin: 0 auto;
+    }
+
+}
+
+
+// innerModal
+
+.innerModal {
+    display: none;
+    &.active{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        z-index: 100;
+        justify-content: center;
+        align-items: center;
+        width: 400px;
+        height: 400px;
+        background-color: #fff;
+        border-radius: 15%;
+        background-image: url(../img/services-bg.jpg);
+        background-size: cover;
+        transition: 0.3s ease-in;
+    & .span-close{
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        border: 1px solid black;
+        border-radius: 100%;
+        padding: 4px 8px;
+        &:hover{
+            color: #fff;
+            background-color: #000;
+        }
+    }
+    
+    & input{
+        display: block;
+        border: 1px solid #CECECE;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        padding: 10px 20px;
+        text-overflow: ellipsis;
+        cursor: pointer;
+        background-color: #795548;
+        opacity: 0.5;
+        color: #fff;
+        &::placeholder{
+            color: #fff;
+        }
+    }
+    & p{
+        font-size: 18px;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+    & .sub-reset {
+        display: flex;
+        justify-content: center;
+        & input{
+            &:hover{
+                transition: 0.3s ease-in-out;
+                transform:scale(1.1);
+                background-color: #fff;
+                color: #000;
+            }
+        }
+    }
+}
+}
+
+.validation-error{
+    color: red;
+}
+
+.success{
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    position: absolute;
+    font-size: 16px;
+    top: 20%;
+    z-index: 3;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    & span{
+        display: block;
+    }
+    & .close-message{
+        margin-top: 15px;
+        width: 100%;
+        padding: 5px 0;
+        font-size: 20px;
+        background-color: #795548;
+        border: none;
+        color: #fff;
+        border-radius: 10px;
+    }
+}
+
+body.active{
+    overflow: hidden;
+}
+
+        

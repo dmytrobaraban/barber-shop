@@ -5,10 +5,12 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
-a {
+a, button {
     text-decoration: none;
     cursor: pointer;
 }
+
+
 
 .header {
     position: fixed;
