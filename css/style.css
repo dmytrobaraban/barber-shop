@@ -341,4 +341,99 @@ body.active {
 .price ul li:nth-last-child(even) {
   color: #000;
   background-color: #e7e7e7;
+}
+
+.comments {
+  padding: 48px 24px;
+  background-image: url(../img/comments-bg.jpg);
+  background-size: cover;
+}
+.comments .swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.container-comments {
+  margin: 80px;
+  position: relative;
+}
+
+.slide-item {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 0.5fr 1fr;
+  max-width: 500px;
+  color: #fff;
+  margin: 0 20px;
+}
+.slide-item img {
+  opacity: 1;
+}
+
+.slide-barber {
+  text-align: center;
+}
+.slide-barber img {
+  display: block;
+  width: 200px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 69px 20px 87px 17px rgba(0, 0, 0, 0.75);
+}
+.slide-barber h3 {
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.slide-barber ul {
+  display: flex;
+  justify-content: center;
+}
+.slide-barber ul li img {
+  width: 20px;
+  margin: 4px;
+}
+
+.slide-comment {
+  text-align: center;
+}
+.slide-comment .comment-info {
+  font-size: 13px;
+  font-weight: 400;
+  opacity: 0.4;
+  margin: 10px 0;
+  text-align: center;
+}
+.slide-comment h3 {
+  margin: 5px 0;
+}
+.slide-comment p {
+  font-weight: 300;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.swiper-wrapper {
+  width: 100vw;
+}
+
+.gallery {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  max-width: 100%;
+}
+.gallery ul {
+  display: flex;
+  justify-content: center;
+}
+.gallery ul li img {
+  display: block;
+  cursor: pointer;
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(1);
+}
+.gallery ul li img:hover {
+  transition: all 0.7s ease-in-out;
+  transform: scale(1.1);
 }/*# sourceMappingURL=style.css.map */

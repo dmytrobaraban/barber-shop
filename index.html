@@ -31,7 +31,7 @@
         <!-- modalWindow -->
         <div class="innerModal">
           <span class="span-close">х</span>
-          <form class="modal-form">
+          <form class="modal-form" onsubmit="return false;">
             <p class="input-name">Ваше ім'я*</p>
             <input type="text" id="name" placeholder="Введіть Ваше ім'я..." />
             <p class="input-tel">Номер телефону*</p>
@@ -161,9 +161,141 @@
       <img src="./img/logo.png" alt="" srcset="" />
     </section>
     <!-- comments -->
-    <section class="comments" id="comments"></section>
+    <section class="comments" id="comments">
+      <h2 class="section-header white">відгуки клієнтів</h2>
+      <div class="moustache white"></div>
+      <div class="container-comments">
+        <div class="swiper-comments">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <div class="slide-item">
+                <!-- comment 1 -->
+                <div class="slide-barber">
+                  <img src="./img/barber-1.jpg" />
+                  <h3>амбасадор євген</h3>
+                  <ul>
+                    <li><img src="./img/iconmonstr-star-3.svg" /></li>
+                    <li><img src="./img/iconmonstr-star-3.svg" /></li>
+                    <li><img src="./img/iconmonstr-star-3.svg" /></li>
+                    <li><img src="./img/iconmonstr-star-3.svg" /></li>
+                    <li><img src="./img/iconmonstr-star-3.svg" /></li>
+                  </ul>
+                </div>
+                <div class="slide-comment">
+                  <img src="./img/client.png" />
+                  <h3>Віталій</h3>
+                  <p class="comment-info">27/02/2023 (Стрижка)</p>
+                  <p>
+                    Був у барбера вперше взагалі. Не знав що мені потрібно, ну
+                    хотілося щось інше, ніж звичайна стрижка, про що й сказав
+                    Євгену. Він мене зрозумів із півслова. Руку майстра видно
+                    було за кілька хвилин. Дуже задоволений, у звичайну
+                    перукарню тепер мені дорога закрита.
+                  </p>
+                </div>
+              </div>
+              <div class="slide-item">
+                <!-- comment 2 -->
+                <div class="slide-barber">
+                  <img src="./img/barber-2.jpg" />
+                  <h3>амбасадор микола</h3>
+                  <ul>
+                    <li><img src="./img/iconmonstr-star-3.svg" /></li>
+                    <li><img src="./img/iconmonstr-star-3.svg" /></li>
+                    <li><img src="./img/iconmonstr-star-3.svg" /></li>
+                    <li><img src="./img/iconmonstr-star-3.svg" /></li>
+                    <li><img src="./img/iconmonstr-star-3.svg" /></li>
+                  </ul>
+                </div>
+                <div class="slide-comment">
+                  <img src="./img/client.png" />
+                  <h3>Дмитро</h3>
+                  <p class="comment-info">02/09/2022 (Гоління)</p>
+                  <p>
+                    Приємна атмосфера, сервіс на найвищому рівні, комфорт,
+                    Микола знає свою справу! Наполегливо рекомендую!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide-item">
+                <!-- comment 3 -->
+                <div class="slide-barber">
+                  <img src="./img/barber-3.jpg" />
+                  <h3>топ барбер роман</h3>
+                  <ul>
+                    <li><img src="./img/iconmonstr-star-3.svg" /></li>
+                    <li><img src="./img/iconmonstr-star-3.svg" /></li>
+                    <li><img src="./img/iconmonstr-star-3.svg" /></li>
+                    <li><img src="./img/iconmonstr-star-3.svg" /></li>
+                    <li><img src="./img/iconmonstr-star-3.svg" /></li>
+                  </ul>
+                </div>
+                <div class="slide-comment">
+                  <img src="./img/client.png" />
+                  <h3>Ростислав</h3>
+                  <p class="comment-info">08/12/2022 (Стрижка)</p>
+                  <p>Top Level !!! Роман справжній майстер! Рекомендую!</p>
+                </div>
+              </div>
+              <div class="slide-item">
+                <!-- comment 4 -->
+                <div class="slide-barber">
+                  <img src="./img/barber-4.jpg" />
+                  <h3>барбер сергій</h3>
+                  <ul>
+                    <li><img src="./img/iconmonstr-star-3.svg" /></li>
+                    <li><img src="./img/iconmonstr-star-3.svg" /></li>
+                    <li><img src="./img/iconmonstr-star-3.svg" /></li>
+                    <li><img src="./img/iconmonstr-star-3.svg" /></li>
+                    <li><img src="./img/iconmonstr-star-3.svg" /></li>
+                  </ul>
+                </div>
+                <div class="slide-comment">
+                  <img src="./img/client.png" />
+                  <h3>Іван</h3>
+                  <p class="comment-info">02/09/2022 (Чоловіча стрижка)</p>
+                  <p>
+                    Найбомбезніший барбершоп в Полтаві! Сергій - спеціаліст,
+                    який знає свою роботу. Все понравилось. Рекомендую!!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
     <!-- gallery -->
-    <section class="gallery" id="gallery"></section>
+    <section class="gallery" id="gallery">
+      <h2 class="section-header white">галерея</h2>
+      <div class="moustache white"></div>
+      <ul>
+        <li><img src="./img/gallery/image-01 (1).jpg"></li>
+        <li><img src="./img/gallery/image-02.jpg"></li>
+        <li><img src="./img/gallery/image-03.jpg"></li>
+        <li><img src="./img/gallery/image-04.jpg"></li>
+        <li><img src="./img/gallery/image-05.jpg"></li>
+        <li><img src="./img/gallery/image-06.jpg"></li>
+      </ul>
+      <ul>
+        <li><img src="./img/gallery/image-07.jpg"></li>
+        <li><img src="./img/gallery/image-08.jpg"></li>
+        <li><img src="./img/gallery/image-09.jpg"></li>
+        <li><img src="./img/gallery/image-10.jpg"></li>
+        <li><img src="./img/gallery/image-11.jpg"></li>
+        <li><img src="./img/gallery/image-12.jpg"></li>
+      </ul>
+    </section>
     <!-- footer -->
     <footer></footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>

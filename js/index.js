@@ -1,4 +1,4 @@
-const swiper = new Swiper('.swiper-fade', {
+const swiperFade = new Swiper('.swiper-fade', {
   effect: 'fade',
   fadeEffect: {
     crossFade: true,
@@ -8,7 +8,36 @@ const swiper = new Swiper('.swiper-fade', {
   direction: 'horizontal',
   loop: true,
   autoplay: {
-    delay: 5000,
+    delay: 4000,
+  },
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+
+const swiperComments = new Swiper('.swiper-comments', {
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true,
+  },
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+  autoplay: {
+    delay: 7000,
   },
 
   // If we need pagination
@@ -83,17 +112,17 @@ closeModalWindow();
 const submitBtn = document.getElementById('submit');
 
 submitBtn.addEventListener('click', () => {
-const dateField = document.getElementById('date');
-const pElem = document.querySelector('.success');
- const mounth = dateField.value.slice(5, 7);
- const day = dateField.value.slice(8, 10);
- const time = dateField.value.slice(11, 16);
- const message = `Ви успішно записалися на ${day}.${mounth}<span>До зустрічі об ${time}</span><button class="close-message">Добре</button>`;
- pElem.innerHTML = message;
- const pElemBtn = document.querySelector('.close-message');
- pElemBtn.addEventListener('click', () => {
-   pElem.innerHTML = '';
- }); 
+  const dateField = document.getElementById('date');
+  const pElem = document.querySelector('.success');
+  const mounth = dateField.value.slice(5, 7);
+  const day = dateField.value.slice(8, 10);
+  const time = dateField.value.slice(11, 16);
+  const message = `Ви успішно записалися на ${day}.${mounth}<span>До зустрічі об ${time}</span><button class="close-message">Добре</button>`;
+  pElem.innerHTML = message;
+  const pElemBtn = document.querySelector('.close-message');
+  pElemBtn.addEventListener('click', () => {
+    pElem.innerHTML = '';
+  });
 });
 
 // функція для валідації (перевірки) на введення даних користувачем
