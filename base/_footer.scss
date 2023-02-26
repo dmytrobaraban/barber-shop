@@ -1,0 +1,92 @@
+.google-map{
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: rgb(252, 252, 252);
+}
+
+.footer-container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    line-height: 1.5;
+    margin: 0 auto;
+    padding: 35px 0;
+    max-width: 1000px;
+    align-items: center;
+    justify-items: center;
+    h6 {
+        font-size: 13px;
+        font-weight: 400;
+        color: #fff;
+    }
+    & a {
+        padding: 4px 0;
+        color: rgba(255, 255, 255, .5);
+        transition: color .1s ease;
+        background-color: transparent;
+        font-size: 13px;
+        &:hover {
+            color: #fff;
+        }
+    }
+    & .nav.footer {
+        display: flex;
+        flex-direction: column;
+        & a::before{
+            content: inherit;
+        }
+    }
+}
+
+.work-time{
+    li{
+        background-color: #111;
+        color: rgba(255, 255, 255, .5);
+        font-size: 13px;
+    }
+}
+
+.contacts{
+    text-align: center;
+    box-sizing: border-box;
+    & .social{
+        display: flex;
+        justify-content: center;
+    }
+    & img{
+        width: 20px;
+    }
+    & .social li{
+        margin: 0 8px;
+    }
+    & h6:nth-of-type(2){
+        margin:10px 0;
+    }
+}
+
+.svg-hover{
+    transition: 0.3s ease-in;
+    width: 40px;
+    fill: #ffffff80;
+        &:hover{
+        fill: #fff;
+        }
+    &-inst{
+        cursor: pointer;
+        position: relative;
+        &:hover::after {
+                content: '';
+                position: absolute;
+                transition: 3s ease-in;
+                background-image: url(../img/instagram-svgrepo-com.svg);
+                background-size: cover;
+                top: 0;
+                left: 0;
+                width: 20px;
+                height: 20px;
+                z-index: 2;
+            }
+        }
+}  
+
+
