@@ -40,11 +40,6 @@ const swiperComments = new Swiper('.swiper-comments', {
     delay: 7000,
   },
 
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
   // Navigation arrows
   navigation: {
     nextEl: '.swiper-button-next',

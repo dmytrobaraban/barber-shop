@@ -46,15 +46,10 @@
             background-color: rgba(#111, 0.9);
             padding: 13px 13px 13px 34px;
             color: #fff;
-            position: relative;
             & span:nth-child(even){
                 float: right;
                 padding-left: 5px;
             }
-        }
-        & li:nth-last-child(even){
-            color: #000;
-            background-color: #e7e7e7;
         }
     }
 }
