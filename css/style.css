@@ -451,8 +451,8 @@ body.active {
   justify-items: center;
 }
 .footer-container h6 {
-  font-size: 13px;
   font-weight: 400;
+  font-size: 13px;
   color: #fff;
 }
 .footer-container a {

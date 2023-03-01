@@ -15,8 +15,10 @@
     align-items: center;
     justify-items: center;
     h6 {
-        font-size: 13px;
-        font-weight: 400;
+        font: {
+            weight: 400;
+            size: 13px;
+        }
         color: #fff;
     }
     & a {
