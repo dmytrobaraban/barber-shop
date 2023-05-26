@@ -14,35 +14,13 @@ a, button {
     cursor: pointer;
 }
 
-.header {
-    position: fixed;
-    height: 80px;
-    background-color: rgba(0, 0, 0, .8);
-    left: 0;
-    top: 0;
-    z-index: 11;
-    width: 100%;
-    transition: top .2s ease-in;
-    & .logo{
-        margin-left: 15px;
-        width: 130px;
-    }
-    &_container{
-        display: grid;
-        grid-template-columns: 0.2fr 0.8fr;
-        padding: 15px;
-        align-items: center;
-    }
-}
-
 .nav {
-    text-align: center;
+    margin-right: 2em;
     &-item{
         position: relative;
         color: #fff;
-        padding: 10px 13px;
+        padding: 5px;
         text-transform: uppercase;
-        margin: 0 20px;
         font-size: 13px;
         transition: all .3s ease-in;
         &:hover::before {
@@ -64,3 +42,143 @@ a, button {
         }
     }
 }
+
+.top-nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 11;
+    width: 100%;
+    transition: top .2s ease-in;
+    background-color: rgba(0, 0, 0, .8);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: #FFF;
+    height: 50px;
+    padding: 1em;
+    & .logo{
+        position: absolute;
+        top: 1em;
+        width: 140px;
+    }
+}
+
+.nav > a {
+    margin: 0 1rem;
+    overflow: hidden;
+
+}
+
+.menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+}
+
+.menu-button::before {
+    content: '';
+    margin-top: -8px;
+}
+
+.menu-button::after {
+    content: '';
+    margin-top: 8px;
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+}
+
+@media (max-width: 700px) {
+
+.logo {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    transition: 0.2s ease;
+}
+
+.menu-button-container {
+    position: absolute;
+    right: 2em;
+    display: flex;
+}
+
+.nav {
+    position: absolute;
+    margin-top: 5em;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu-toggle~.nav a {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+    #menu-toggle:checked~.nav a {
+        border: 1px solid #333;
+        height: 2.5em;
+        padding: 0.5em;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .nav > a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0.5em 0;
+        width: 100%;
+        color: white;
+        background-color: #111;
+    }
+
+    .nav>a:not(:last-child) {
+        border-bottom: 1px solid #444;
+    }
+
+
+}
+
+
+

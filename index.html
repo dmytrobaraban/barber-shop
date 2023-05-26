@@ -12,19 +12,21 @@
     <title>Old Dutch</title>
   </head>
   <body>
-    <!-- header -->
-    <header class="header">
-      <div class="header_container">
-        <img src="img/logo-with-shaver.png" alt="logo" class="logo" />
-        <div class="nav">
-          <a class="nav-item" href="#about-us">про нас</a>
-          <a class="nav-item" href="#services">послуги</a>
-          <a class="nav-item" href="#comments">відгуки</a>
-          <a class="nav-item" href="#gallery">галерея</a>
-          <a class="nav-item" href="#contacts">контакти</a>
-        </div>
-      </div>
-    </header>
+    <!-- top-nav -->
+    <section class="top-nav">
+      <div><img src="img/logo-with-shaver.png" alt="logo" class="logo" /></div>
+      <input id="menu-toggle" type="checkbox" />
+      <label class="menu-button-container" for="menu-toggle">
+        <div class="menu-button"></div>
+      </label>
+      <nav class="nav">
+        <a class="nav-item" href="#about-us">про нас</a>
+        <a class="nav-item" href="#services">послуги</a>
+        <a class="nav-item" href="#comments">відгуки</a>
+        <a class="nav-item" href="#gallery">галерея</a>
+        <a class="nav-item" href="#contacts">контакти</a>
+      </nav>
+    </section>
     <!-- main -->
     <section class="main">
       <div class="sign-up">
@@ -33,19 +35,26 @@
         <!-- modalWindow -->
         <div class="innerModal">
           <span class="span-close">х</span>
-          <form class="modal-form" onsubmit="return false;">
+          <form class="modal-form" onchange="validate(e);">
             <p class="input-name">Ваше ім'я*</p>
-            <input type="text" id="name" placeholder="Введіть Ваше ім'я..." />
+            <input
+              type="text"
+              id="name"
+              placeholder="Введіть Ваше ім'я..."
+              oninput="validate()"
+            />
             <p class="input-tel">Номер телефону*</p>
             <input
               type="tel"
               id="phone"
               placeholder="Введіть Ваш номер телефону..."
+              oninput="validate()"
             />
             <p class="input-date">Оберіть дату та час*</p>
-            <input type="datetime-local" id="date" />
+            <input type="datetime-local" id="date" oninput="validate()" />
             <div class="sub-reset">
-              <input type="submit" id="submit" /> <input type="reset" />
+              <input type="submit" id="submit" />
+              <input type="reset" />
             </div>
           </form>
         </div>
