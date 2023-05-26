@@ -8,7 +8,6 @@
         & img {
         cursor: pointer;
         width: inherit;
-        opacity: 0.5;
         }
     }
 }
@@ -27,9 +26,9 @@
     padding: 100px 0;
     z-index: 2;
     &-btn{
-        background: #795548;
+        background: rgba(121, 85, 72, 0.5);
         color: #fff;
-        font-size: 1.1rem;
+        font-size: 0.9rem;
         border: 1px solid transparent;
         padding: 13px 21px;
         height: auto;
@@ -37,7 +36,6 @@
         min-width: 155px;
         border-radius: 30px;
         width: 40%;
-        margin-bottom: 3%;
         transition: all .3s ease-in;
         &:hover{
             color: #000;
@@ -154,4 +152,28 @@ body.active{
     overflow: hidden;
 }
 
+@media (max-width: 1015px) {
+    .sign-up {
+        background-color: transparent;
+        padding: 0;
+    }
+    
+    .sign-up-container{
         
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        & .logo-shaver{
+            width: 100px;
+         }
+        & img{
+            width: 200px;
+         }
+        & button {
+            font-size: 16px;
+            padding: 10px 10px;
+            margin: 0 auto;
+        }
+    }
+    
+}

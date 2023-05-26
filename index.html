@@ -14,7 +14,11 @@
   <body>
     <!-- top-nav -->
     <section class="top-nav">
-      <div><img src="img/logo-with-shaver.png" alt="logo" class="logo" /></div>
+      <div>
+        <a href="#main"
+          ><img src="img/logo-with-shaver.png" alt="logo" class="logo"
+        /></a>
+      </div>
       <input id="menu-toggle" type="checkbox" />
       <label class="menu-button-container" for="menu-toggle">
         <div class="menu-button"></div>
@@ -28,7 +32,7 @@
       </nav>
     </section>
     <!-- main -->
-    <section class="main">
+    <section class="main" id="main">
       <div class="sign-up">
         <!-- success -->
         <p class="success"></p>
@@ -114,6 +118,7 @@
             зробити як популярний Фейд чи текстурну стрижку, так і будь-яку
             класичну зачіску, а також оригінальне Hair tattoo.
           </p>
+          <img src="./img/scissors-03.png" />
         </div>
         <div class="item">
           <h3 class="item-header">Борода і вуса</h3>
@@ -123,6 +128,7 @@
             допомогою стрижки і гоління. Також ми можемо підібрати тобі якісні
             засоби догляду, щоб покращити їх густоту і зовнішній вигляд.
           </p>
+          <img src="./img/moustache-02.png" />
         </div>
         <div class="item">
           <h3 class="item-header">Гоління</h3>
@@ -132,10 +138,8 @@
             проти росту волосся – ти можеш обрати те, що тобі до душі і отримати
             першокласний результат.
           </p>
+          <img src="./img/shaver-01.png" />
         </div>
-        <img src="./img/scissors-03.png" />
-        <img src="./img/moustache-02.png" />
-        <img src="./img/shaver-01.png" />
       </div>
       <div class="price">
         <ul>
@@ -169,7 +173,7 @@
           </li>
         </ul>
       </div>
-      <img src="./img/logo.png" alt="" srcset="" />
+      <img src="./img/logo.png" class="man-logo" />
     </section>
     <!-- comments -->
     <section class="comments" id="comments">
@@ -278,8 +282,8 @@
             </div>
           </div>
           <!-- If we need navigation buttons -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+          <!-- <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div> -->
         </div>
       </div>
     </section>
@@ -321,7 +325,7 @@
       </div>
       <div class="footer-container">
         <img src="./img/logo-with-shaver.png" />
-        <div class="nav footer">
+        <div class="nav-footer">
           <a class="nav-item" href="#about-us">про нас</a>
           <a class="nav-item" href="#services">послуги</a>
           <a class="nav-item" href="#comments">відгуки</a>
