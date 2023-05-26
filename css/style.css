@@ -724,4 +724,9 @@ body.active {
   .footer-container a, .footer-container span, .footer-container h6 {
     font-size: 0.7em;
   }
+}
+@media (max-width: 315px) {
+  .footer-container {
+    align-items: baseline;
+  }
 }/*# sourceMappingURL=style.css.map */
