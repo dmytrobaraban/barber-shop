@@ -57,34 +57,31 @@ const openModalWindow = () => {
   const bodyElem = document.getElementsByTagName('body')[0];
   const modalElem = document.querySelector('.innerModal');
 
-  modalBtn.addEventListener('click', (e) => {
+  modalBtn.addEventListener('click', () => {
     bodyElem.classList.toggle('active');
     modalElem.classList.toggle('active');
-    const form = document.querySelector('.modal-form');
-
-    form.addEventListener('submit', validate);
-
-    // маска для поля вводу телефону у форматі (код оператора) ххх - хх - хх
-
-    const phoneInput = document.getElementById('phone');
-
-    phoneInput.addEventListener('input', function (e) {
-      let x = e.target.value
-        .replace(/\D/g, '')
-        .match(/(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
-      e.target.value = !x[2]
-        ? x[1]
-        : '( ' +
-          x[1] +
-          ' ) ' +
-          x[2] +
-          (!x[3] ? '' : ' - ' + x[3]) +
-          (!x[4] ? '' : ' - ' + x[4]);
-    });
   });
 };
 
 openModalWindow();
+
+// маска для поля вводу телефону у форматі (код оператора) ххх - хх - хх
+
+const phoneInput = document.getElementById('phone');
+
+phoneInput.addEventListener('input', function (e) {
+  let x = e.target.value
+    .replace(/\D/g, '')
+    .match(/(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+  e.target.value = !x[2]
+    ? x[1]
+    : '( ' +
+      x[1] +
+      ' ) ' +
+      x[2] +
+      (!x[3] ? '' : ' - ' + x[3]) +
+      (!x[4] ? '' : ' - ' + x[4]);
+});
 
 const closeModalWindow = () => {
   const submitBtn = document.getElementById('submit');
@@ -129,10 +126,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function validate(event) {
     event.preventDefault();
     let valid = false;
-
-    const nameField = document.getElementById('name');
-    const phoneField = document.getElementById('phone');
-    const dateField = document.getElementById('date');
 
     if (!nameField.value) {
       document.querySelector('.input-name').className =
