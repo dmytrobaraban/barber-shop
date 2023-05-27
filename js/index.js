@@ -91,11 +91,12 @@ const closeModalWindow = () => {
   const modalElem = document.querySelector('.innerModal');
   const bodyElem = document.getElementsByTagName('body')[0];
   const spanElem = document.querySelector('.span-close');
+  const pElem = document.querySelector('.success');
   submitBtn.addEventListener('click', () => {
     modalElem.classList.toggle('active');
     bodyElem.classList.toggle('active');
   });
-
+  pElem.classList.toggle('active');
   spanElem.addEventListener('click', () => {
     modalElem.classList.toggle('active');
     bodyElem.classList.toggle('active');
@@ -104,14 +105,53 @@ const closeModalWindow = () => {
 
 closeModalWindow();
 
-function validate(e) {
-  e.preventDefault();
+/* Обмежуємо час для запису, щоб не можна було обрати минулий час або поточний */
+// const dateField = document.getElementById('date');
+// const currentDate = new Date().toISOString().slice(0, 16);
+// dateField.setAttribute('min', currentDate);
+const dateField = document.getElementById('date');
+const timeField = document.getElementById('time');
+
+const currentDate = new Date().toISOString().split('T')[0];
+const currentTime = new Date().toISOString().slice(11, 16);
+
+dateField.setAttribute('min', currentDate);
+timeField.setAttribute('min', '10:00');
+timeField.setAttribute('max', '20:00');
+
+function validateDate() {
+  const selectedDate = dateField.value;
+  const selectedTime = timeField.value;
+
+  const selectedDateTime = new Date(`${selectedDate}T${selectedTime}`);
+  const minDateTime = new Date(`${currentDate}T10:00`);
+  const maxDateTime = new Date(`${currentDate}T20:00`);
+
+  if (selectedDateTime < minDateTime || selectedDateTime > maxDateTime) {
+    timeField.value = '';
+  }
+}
+
+function validateTime() {
+  const selectedDate = dateField.value;
+  const selectedTime = timeField.value;
+
+  const selectedDateTime = new Date(`${selectedDate}T${selectedTime}`);
+  const minDateTime = new Date(`${currentDate}T10:00`);
+  const maxDateTime = new Date(`${currentDate}T20:00`);
+
+  if (selectedDateTime < minDateTime || selectedDateTime > maxDateTime) {
+    timeField.value = '';
+  }
+}
+
+function validate() {
   let valid = false;
 
   const nameField = document.getElementById('name');
   const phoneField = document.getElementById('phone');
-  const dateField = document.getElementById('date');
-  const submitBtn = document.getElementById('submit');
+  // const dateField = document.getElementById('date');
+  // const submitBtn = document.getElementById('submit');
 
   if (!nameField.value) {
     document.querySelector('.input-name').className =
@@ -137,20 +177,38 @@ function validate(e) {
     valid = true;
   }
 
+  if (!timeField.value) {
+    document.querySelector('.input-time').className =
+      'input-time validation-error';
+    valid = false;
+  } else {
+    valid = true;
+  }
+
   if (valid) {
     const pElem = document.querySelector('.success');
-    const month = dateField.value.slice(5, 7);
-    const day = dateField.value.slice(8, 10);
-    const time = dateField.value.slice(11, 16);
-    const message = `Ви успішно записалися на ${day}.${month}<span>До зустрічі об ${time}</span><button class="close-message">Добре</button>`;
+    const tableOfRecord = document.getElementById('records');
+    // const month = dateField.value.slice(5, 7);
+    // const day = dateField.value.slice(8, 10);
+    // const time = dateField.value.slice(11, 16);
+    const date = dateField.value;
+    const time = timeField.value;
+    const dateFormated = date.slice(5, -1);
+    const message = `Ви успішно записалися на ${dateFormated}</br>До зустрічі об ${timeField.value}<button class="close-message">Добре</button>`;
     pElem.innerHTML = message;
+    const record = `<tr><td>${nameField.value}</td><td>${date}</td><td>${time}</td></tr>`;
+    tableOfRecord.innerHTML += record;
     const pElemBtn = document.querySelector('.close-message');
     pElemBtn.addEventListener('click', () => {
       pElem.innerHTML = '';
     });
-    submitBtn.removeAttribute('disabled');
-  } else {
-    submitBtn.setAttribute('disabled', 'disabled');
+    nameField.value = ''; // Очищення поля для імені
+    phoneField.value = ''; // Очищення поля для номера телефону
+    // Очищення поля для дати та часу
+    //   submitBtn.removeAttribute('disabled');
+    // } else {
+    //   submitBtn.setAttribute('disabled', 'disabled');
+    // }
   }
 }
 

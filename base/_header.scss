@@ -186,3 +186,10 @@ a, button {
 
 
 
+@media (max-width: 350px){
+    .top-nav{
+       & .menu-button-container{
+            right: 1em;
+       }
+    }
+}

@@ -171,15 +171,47 @@ a, button {
     border-bottom: 1px solid #444;
   }
 }
+@media (max-width: 350px) {
+  .top-nav .menu-button-container {
+    right: 1em;
+  }
+}
 .main {
   position: relative;
-  min-height: auto;
   background-color: #000;
 }
 
 .swiper-slide img {
   cursor: pointer;
   width: inherit;
+}
+
+.visitors {
+  text-align: center;
+  background-color: #000;
+  padding: 10px 0;
+}
+.visitors p {
+  color: #FFF;
+}
+.visitors summary {
+  cursor: pointer;
+  color: #FFF;
+  margin-bottom: 5px;
+}
+.visitors table {
+  margin: 0 auto;
+  text-align: center;
+  color: #FFF;
+}
+.visitors table th {
+  padding: 5px;
+  border: 1px solid #FFF;
+  border-top-left-radius: 3px;
+}
+.visitors table td {
+  padding: 5px;
+  border: 1px solid #FFF;
 }
 
 .sign-up {
@@ -219,13 +251,12 @@ a, button {
 }
 
 .innerModal {
-  display: none;
-}
-.innerModal.active {
-  position: absolute;
+  position: fixed;
+  transform: translate(-250%, -50%);
+  transition: all 0.5s;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  opacity: 0;
   display: flex;
   z-index: 100;
   justify-content: center;
@@ -236,7 +267,12 @@ a, button {
   border-radius: 15%;
   background-image: url(../img/services-bg.jpg);
   background-size: cover;
-  transition: 0.3s ease-in;
+  padding-top: 10px;
+}
+.innerModal.active {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s;
 }
 .innerModal.active .span-close {
   cursor: pointer;
@@ -251,8 +287,9 @@ a, button {
   color: #fff;
   background-color: #000;
 }
-.innerModal.active input:not(:nth-child(0)) {
+.innerModal.active input {
   display: block;
+  width: 94%;
   border: 1px solid #CECECE;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -263,10 +300,10 @@ a, button {
   opacity: 0.5;
   color: #fff;
 }
-.innerModal.active input:not(:nth-child(0))::-moz-placeholder {
+.innerModal.active input::-moz-placeholder {
   color: #fff;
 }
-.innerModal.active input:not(:nth-child(0))::placeholder {
+.innerModal.active input::placeholder {
   color: #fff;
 }
 .innerModal.active p {
@@ -278,20 +315,14 @@ a, button {
   display: flex;
   justify-content: center;
 }
-.innerModal.active .sub-reset input:hover {
-  transition: 0.3s ease-in-out;
-  transform: scale(1.1);
-  background-color: #fff;
-  color: #000;
-}
 
 .validation-error {
   color: red;
 }
 
 .success {
-  display: block;
   color: #fff;
+  text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
   font-size: 18px;
   position: absolute;
   font-size: 16px;
@@ -299,6 +330,7 @@ a, button {
   z-index: 3;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: all 0.3s;
 }
 .success span {
   display: block;
@@ -327,6 +359,8 @@ body.active {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin-top: 40px;
+    transition: all 0.3s;
   }
   .sign-up-container .logo-shaver {
     width: 100px;
@@ -338,6 +372,79 @@ body.active {
     font-size: 16px;
     padding: 10px 10px;
     margin: 0 auto;
+  }
+  .success {
+    top: 0;
+    width: 175px;
+  }
+}
+@media (max-width: 850px) {
+  .innerModal {
+    border-radius: 10px;
+    width: 240px;
+    height: 250px;
+  }
+  .innerModal.active .span-close {
+    top: 2px;
+    right: 30px;
+  }
+  .innerModal.active input {
+    border-radius: 5px;
+    margin-bottom: 5px;
+    padding: 5px 5px;
+  }
+  .innerModal.active input::-moz-placeholder {
+    font-size: 0.8em;
+  }
+  .innerModal.active input::placeholder {
+    font-size: 0.8em;
+  }
+  .innerModal.active p {
+    font-size: 0.8em;
+    margin-bottom: 5px;
+  }
+  .innerModal.active .sub-reset input {
+    font-size: 0.8em;
+  }
+}
+@media (max-width: 730px) {
+  .innerModal {
+    top: 60%;
+  }
+  .success {
+    top: 125%;
+  }
+}
+@media (max-width: 580px) {
+  .innerModal {
+    top: 70%;
+  }
+  .success {
+    top: 150%;
+  }
+}
+@media (max-width: 460px) {
+  .innerModal {
+    top: 100%;
+  }
+  .sign-up-container {
+    margin-top: 60px;
+  }
+  .sign-up-container .sign-up-btn {
+    font-size: 0.8em;
+    padding: 0;
+  }
+  .sign-up-container img {
+    margin: 0 auto;
+    width: 100px;
+  }
+  .success {
+    top: 125%;
+  }
+}
+@media (max-width: 460px) {
+  .innerModal {
+    top: 150%;
   }
 }
 .section-header {

@@ -39,7 +39,7 @@
         <!-- modalWindow -->
         <div class="innerModal">
           <span class="span-close">х</span>
-          <form class="modal-form" onchange="validate(e);">
+          <form class="modal-form" onsubmit="validate(); return false;">
             <p class="input-name">Ваше ім'я*</p>
             <input
               type="text"
@@ -54,8 +54,11 @@
               placeholder="Введіть Ваш номер телефону..."
               oninput="validate()"
             />
-            <p class="input-date">Оберіть дату та час*</p>
-            <input type="datetime-local" id="date" oninput="validate()" />
+            <!-- <input type="datetime-local" id="date" oninput="validate()" /> -->
+            <p class="input-date">Оберіть дату*</p>
+            <input type="date" id="date" oninput="validateDate()" />
+            <p class="input-time">Оберіть час*</p>
+            <input type="time" id="time" oninput="validateTime()" />
             <div class="sub-reset">
               <input type="submit" id="submit" />
               <input type="reset" />
@@ -79,13 +82,23 @@
           <div class="swiper-slide"><img src="img/image-05.jpg" /></div>
         </div>
         <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
+        <!-- <div class="swiper-pagination"></div> -->
 
         <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <!-- <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> -->
       </div>
     </section>
+    <details class="visitors">
+      <summary>Переглянути записи</summary>
+      <table>
+        <tbody id="records">
+          <th>Ім'я</th>
+          <th>Дата</th>
+          <th>Час</th>
+        </tbody>
+      </table>
+    </details>
     <!-- about-us -->
     <section class="about-us" id="about-us">
       <h2 class="section-header white">про нас</h2>
@@ -473,6 +486,7 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
     <script src="js/index.js"></script>
   </body>
 </html>
