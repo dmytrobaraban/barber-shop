@@ -39,26 +39,17 @@
         <!-- modalWindow -->
         <div class="innerModal">
           <span class="span-close">х</span>
-          <form class="modal-form" onsubmit="validate(); return false;">
+          <form class="modal-form" onsubmit="validate(event)">
             <p class="input-name">Ваше ім'я*</p>
-            <input
-              type="text"
-              id="name"
-              placeholder="Введіть Ваше ім'я..."
-              oninput="validate()"
-            />
+            <input type="text" id="name" placeholder="Введіть Ваше ім'я..." />
             <p class="input-tel">Номер телефону*</p>
             <input
               type="tel"
               id="phone"
               placeholder="Введіть Ваш номер телефону..."
-              oninput="validate()"
             />
-            <!-- <input type="datetime-local" id="date" oninput="validate()" /> -->
-            <p class="input-date">Оберіть дату*</p>
-            <input type="date" id="date" oninput="validateDate()" />
-            <p class="input-time">Оберіть час*</p>
-            <input type="time" id="time" oninput="validateTime()" />
+            <p class="input-date">Дата та час*</p>
+            <input type="datetime-local" id="date" />
             <div class="sub-reset">
               <input type="submit" id="submit" />
               <input type="reset" />
