@@ -273,6 +273,7 @@ a, button {
   opacity: 1;
   transform: translate(-50%, -50%);
   transition: all 0.5s;
+  padding: 0 10px;
 }
 .innerModal.active .span-close {
   cursor: pointer;
@@ -288,11 +289,11 @@ a, button {
   background-color: #000;
 }
 .innerModal.active input {
-  display: block;
   border: 1px solid #CECECE;
   border-radius: 10px;
   margin-bottom: 20px;
   padding: 10px 20px;
+  text-align: center;
   text-overflow: ellipsis;
   cursor: pointer;
   background-color: #795548;
@@ -312,7 +313,6 @@ a, button {
 }
 .innerModal.active .sub-reset {
   display: flex;
-  justify-content: center;
 }
 .innerModal.active .sub-reset input {
   width: 100%;

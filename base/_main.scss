@@ -100,6 +100,7 @@
             opacity: 1;
             transform: translate(-50%, -50%);
             transition: all 0.5s;
+            padding: 0 10px;
         & .span-close{
             cursor: pointer;
             position: absolute;
@@ -114,11 +115,11 @@
             }
         }
         & input{
-            display: block;
             border: 1px solid #CECECE;
             border-radius: 10px;
             margin-bottom: 20px;
             padding: 10px 20px;
+            text-align: center;
             text-overflow: ellipsis;
             cursor: pointer;
             background-color: #795548;
@@ -135,7 +136,6 @@
         }
         & .sub-reset {
             display: flex;
-            justify-content: center;
             & input{
                 width: 100%;
             }
