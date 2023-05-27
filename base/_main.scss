@@ -110,6 +110,7 @@
         opacity: 1;
         transform: translate(-50%, -50%);
         transition: all 0.5s;
+
         & .span-close {
             cursor: pointer;
             position: absolute;
@@ -118,6 +119,7 @@
             border: 1px solid black;
             border-radius: 100%;
             padding: 4px 8px;
+
             &:hover {
                 color: #fff;
                 background-color: #000;
@@ -126,6 +128,7 @@
 
         & input {
             display: block;
+            width: 94%;
             border: 1px solid #CECECE;
             border-radius: 10px;
             margin-bottom: 20px;
@@ -140,16 +143,16 @@
                 color: #fff;
             }
         }
+
         & p {
             font-size: 18px;
             margin-bottom: 10px;
             text-align: left;
         }
+
         & .sub-reset {
-                display: flex;
-                & input{
-                    width: 100%;
-                }
+            display: flex;
+            justify-content: center;
         }
     }
 }

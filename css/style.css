@@ -289,6 +289,7 @@ a, button {
 }
 .innerModal.active input {
   display: block;
+  width: 94%;
   border: 1px solid #CECECE;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -312,9 +313,7 @@ a, button {
 }
 .innerModal.active .sub-reset {
   display: flex;
-}
-.innerModal.active .sub-reset input {
-  width: 100%;
+  justify-content: center;
 }
 
 .validation-error {
