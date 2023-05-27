@@ -89,7 +89,10 @@
     z-index: 100;
     justify-content: center;
     align-items: center;
+    max-width: 90%;
+    /* Задаємо максимальну ширину контейнера */
     width: 400px;
+    /* Задаємо фіксовану ширину для десктопів */
     height: 400px;
     background-color: #fff;
     border-radius: 15%;
@@ -211,8 +214,9 @@ body.active{
 @media (max-width: 850px) {
     .innerModal {
             border-radius: 10px;
-            width: 240px;
+            max-width: 240px;
             height: 250px;
+            width: 90%;
             &.active {
                 & .span-close {
                     top: 2px;
@@ -261,7 +265,8 @@ body.active{
 
 @media (max-width: 460px) {
     .innerModal {
-        top: 100%;
+            top: 150%;
+            width: 200px;
     }
     .sign-up-container {
         margin-top: 60px;
@@ -277,10 +282,4 @@ body.active{
     .success {
         top: 125%;
     }
-}
-
-@media (max-width: 460px){
-    .innerModal {
-            top: 150%;
-        }
 }
