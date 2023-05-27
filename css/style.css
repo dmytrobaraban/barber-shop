@@ -314,6 +314,9 @@ a, button {
   display: flex;
   justify-content: center;
 }
+.innerModal.active .sub-reset input {
+  width: 100%;
+}
 
 .validation-error {
   color: red;
